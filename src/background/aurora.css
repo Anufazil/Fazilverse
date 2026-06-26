@@ -1,0 +1,66 @@
+.aurora-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  filter: blur(120px);
+  opacity: .35;
+  border-radius: 9999px;
+  animation: float 18s ease-in-out infinite;
+}
+
+.purple {
+  width: 600px;
+  height: 600px;
+  background: #7C3AED;
+  top: -200px;
+  left: -150px;
+}
+
+.cyan {
+  width: 500px;
+  height: 500px;
+  background: #06B6D4;
+  right: -150px;
+  top: 150px;
+  animation-delay: -6s;
+}
+
+.pink {
+  width: 450px;
+  height: 450px;
+  background: #EC4899;
+  bottom: -150px;
+  left: 35%;
+  animation-delay: -10s;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+
+  50% {
+    transform: translateY(-60px) translateX(40px) scale(1.15);
+  }
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+
+  mask-image: radial-gradient(circle, white 40%, transparent 90%);
+}
