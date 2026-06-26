@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import profile from "../../../assets/images/profile.png";
+import FloatingIcons from "./FloatingIcons";
 
 export default function HeroImage() {
   return (
@@ -23,6 +24,7 @@ export default function HeroImage() {
         alt="Fazil"
         className="relative z-10 h-80 w-80 rounded-full border-4 border-cyan-400/30 object-cover shadow-2xl"
       />
+      <FloatingIcons />
     </motion.div>
   );
 }
