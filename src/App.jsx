@@ -1,4 +1,4 @@
-import AuroraBackground from "./components/ui/AuroraBackground";
+import AuroraBackground from "./components/ui/background/AuroraBackground";
 import Button from "./components/ui/Button";
 import Container from "./components/ui/Container";
 import GradientText from "./components/ui/GradientText";
