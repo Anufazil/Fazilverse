@@ -1,19 +1,31 @@
+import { motion } from "framer-motion";
+import useMousePosition from "../../../hooks/useMousePosition";
+
 export default function Spotlight() {
+  const { x, y } = useMousePosition();
+
   return (
-    <div
+    <motion.div
+      animate={{
+        left: x,
+        top: y,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 40,
+        damping: 20,
+      }}
       className="
       absolute
-      left-1/2
-      top-1/2
-      h-[700px]
-      w-[700px]
-      -translate-x-1/2
-      -translate-y-1/2
+      h-[120px]
+      w-[120px]
       rounded-full
       bg-cyan-500/10
-      blur-[180px]
+      blur-[30px]
       pointer-events-none
-    "
+      -translate-x-1/2
+      -translate-y-1/2
+      "
     />
   );
 }

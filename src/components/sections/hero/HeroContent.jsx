@@ -4,6 +4,7 @@ import HeroButtons from "./HeroButtons";
 import HeroSocials from "./HeroSocials";
 import { motion } from "framer-motion";
 import { fadeUp } from "../../../animations/heroVariants";
+import HeroStats from "./HeroStats";
 
 export default function HeroContent() {
   return (
@@ -83,6 +84,7 @@ export default function HeroContent() {
         custom={1.1}
       >
         <HeroSocials />
+        <HeroStats />
       </motion.div>
     </div>
   );

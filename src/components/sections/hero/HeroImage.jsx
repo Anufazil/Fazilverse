@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import profile from "../../../assets/images/profile.png";
 import FloatingIcons from "./FloatingIcons";
+import useMousePosition from "../../../hooks/useMousePosition";
 
 export default function HeroImage() {
+  const { x, y } = useMousePosition();
+
   return (
     <motion.div
       initial={{
@@ -13,6 +16,8 @@ export default function HeroImage() {
       animate={{
         opacity: 1,
         scale: 1,
+        x: (x - window.innerWidth / 2) / 40,
+        y: (y - window.innerHeight / 2) / 40,
       }}
       transition={{
         opacity: {
@@ -22,6 +27,16 @@ export default function HeroImage() {
         scale: {
           duration: 0.8,
           delay: 0.8,
+        },
+        x: {
+          type: "spring",
+          stiffness: 80,
+          damping: 20,
+        },
+        y: {
+          type: "spring",
+          stiffness: 80,
+          damping: 20,
         },
       }}
       className="relative flex items-center justify-center"

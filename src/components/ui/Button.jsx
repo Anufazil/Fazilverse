@@ -16,10 +16,11 @@ export default function Button({
   return (
     <motion.button
       whileHover={{
-        scale: 1.05,
+          scale:1.05,
+          y:-4,
       }}
       whileTap={{
-        scale: 0.97,
+          scale:.96
       }}
       onClick={onClick}
       className={`

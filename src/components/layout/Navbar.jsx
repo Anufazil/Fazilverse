@@ -1,59 +1,77 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { navigation } from "../../constants/navigation";
+import { HiMenu, HiX } from "react-icons/hi";
+import GradientText from "../ui/GradientText";
 import Button from "../ui/Button";
-import Container from "../ui/Container";
+import ScrollProgress from "./ScrollProgress";
+import { NAV_LINKS } from "../../constants/navigation";
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () =>
-      window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const [open, setOpen] = useState(false);
 
   return (
-    <motion.header
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "bg-slate-950/70 backdrop-blur-xl border-b border-white/10"
-          : "bg-transparent"
-      }`}
-    >
-      <Container className="flex h-20 items-center justify-between">
+    <>
+      <ScrollProgress />
 
-        <h1 className="text-2xl font-bold">
-          <span className="bg-gradient-to-r from-violet-500 to-cyan-400 bg-clip-text text-transparent">
+      <header className="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-black/20 backdrop-blur-xl">
+        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+
+          <GradientText className="text-3xl font-bold">
             FazilVerse
-          </span>
-        </h1>
+          </GradientText>
 
-        <nav className="hidden gap-8 md:flex">
+          <ul className="hidden gap-8 lg:flex">
+            {NAV_LINKS.map((item) => (
+              <li key={item.name}>
+                <a
+                  href={item.href}
+                  className="relative text-gray-300 transition hover:text-cyan-400"
+                >
+                  {item.name}
 
-          {navigation.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className="text-gray-300 transition hover:text-white"
-            >
-              {item.name}
-            </a>
-          ))}
+                  <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-cyan-400 transition-all duration-300 hover:w-full"></span>
+                </a>
+              </li>
+            ))}
+          </ul>
 
+          <div className="hidden lg:block">
+            <Button>Let's Talk</Button>
+          </div>
+
+          <button
+            onClick={() => setOpen(!open)}
+            className="text-3xl text-white lg:hidden"
+          >
+            {open ? <HiX /> : <HiMenu />}
+          </button>
         </nav>
 
-        <Button>Let's Talk</Button>
-
-      </Container>
-    </motion.header>
+        {open && (
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: -20,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            className="border-t border-white/10 bg-black/70 backdrop-blur-xl lg:hidden"
+          >
+            {NAV_LINKS.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="block px-6 py-4 text-gray-300 hover:bg-cyan-500/10"
+              >
+                {item.name}
+              </a>
+            ))}
+          </motion.div>
+        )}
+      </header>
+    </>
   );
 }
