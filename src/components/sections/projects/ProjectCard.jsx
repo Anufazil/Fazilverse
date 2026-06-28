@@ -9,6 +9,7 @@ export default function ProjectCard({ project }) {
       <motion.img
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.3 }}
+        loading="lazy"
         src={project.image}
         alt={project.title}
         className="h-52 w-full object-cover"

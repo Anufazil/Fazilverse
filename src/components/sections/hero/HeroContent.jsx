@@ -28,7 +28,7 @@ export default function HeroContent() {
         custom={0.3}
         className="mb-6 text-6xl font-bold lg:text-8xl"
       >
-        <GradientText>Fazil</GradientText>
+        <GradientText>Anu Fazil</GradientText>
       </motion.h1>
 
       {/* Type Animation */}

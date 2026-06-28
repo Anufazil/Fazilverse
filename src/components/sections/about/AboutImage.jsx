@@ -46,6 +46,7 @@ export default function AboutImage() {
 
       <img
         src={profile}
+        loading="lazy"
         alt="Fazil"
         className="relative z-10 h-[420px] w-[420px] rounded-[36px] object-cover shadow-[0_0_60px_rgba(0,255,255,0.15)]"
       />

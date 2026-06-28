@@ -4,23 +4,35 @@ import {
   FaLinkedin,
   FaEnvelope,
   FaFileDownload,
+  FaWhatsapp,
+  FaInstagram,
 } from "react-icons/fa";
 
 const socials = [
   {
     name: "GitHub",
     icon: FaGithub,
-    href: "https://github.com/YOUR_USERNAME",
+    href: "https://github.com/Anufazil",
   },
   {
     name: "LinkedIn",
     icon: FaLinkedin,
-    href: "https://linkedin.com/in/YOUR_USERNAME",
+    href: "https://linkedin.com/in/anufazilp",
   },
   {
     name: "Email",
     icon: FaEnvelope,
-    href: "mailto:YOUR_EMAIL@gmail.com",
+    href: "mailto:anufazil08@gmail.com",
+  },
+  {
+    name: "Whatsapp",
+    icon: FaWhatsapp,
+    href: "https://wa.me/8590321727",
+  },
+  {
+    name: "Instagram",
+    icon: FaInstagram,
+    href: "https://www.instagram.com/faz__zil08",
   },
   {
     name: "Resume",

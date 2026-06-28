@@ -2,6 +2,8 @@ import {
   FaGithub,
   FaLinkedin,
   FaEnvelope,
+  FaInstagram,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 export default function HeroSocials() {
@@ -12,7 +14,11 @@ export default function HeroSocials() {
 
       <FaLinkedin className="cursor-pointer transition hover:text-cyan-400" />
 
-      <FaEnvelope className="cursor-pointer transition hover:text-pink-400" />
+      <FaEnvelope className="cursor-pointer transition hover:text-orange-400" />
+
+      <FaInstagram className="cursor-pointer transition hover:text-pink-400" />
+
+      <FaWhatsapp className="cursor-pointer transition hover:text-green-400" />
 
     </div>
   );

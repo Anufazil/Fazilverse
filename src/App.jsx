@@ -1,24 +1,61 @@
+import { useEffect, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+
+import AuroraBackground from "./components/ui/Background/AuroraBackground";
+import LoadingScreen from "./components/ui/LoadingScreen";
+import ScrollProgress from "./components/ui/ScrollProgress";
+import BackToTop from "./components/ui/BackToTop";
+
 import Navbar from "./components/layout/Navbar";
 import Hero from "./components/sections/hero/Hero";
-import About from "./components/sections/about/About";
-import Skills from "./components/sections/skills/Skills";
-import Projects from "./components/sections/projects/Projects";
-import Contact from "./components/sections/contact/Contact";
-import AuroraBackground from "./components/ui/Background/AuroraBackground";
+
+import { lazy, Suspense } from "react";
+
+const About = lazy(() => import("./components/sections/about/About"));
+const Skills = lazy(() => import("./components/sections/skills/Skills"));
+const Projects = lazy(() => import("./components/sections/projects/Projects"));
+const Contact = lazy(() => import("./components/sections/contact/Contact"));
+import Footer from "./components/layout/footer/Footer";
 
 function App() {
-  return (
-    <AuroraBackground>
-      <Navbar />
+  const [loading, setLoading] = useState(true);
 
-      <main className="pt-20">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-    </AuroraBackground>
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <>
+      <AnimatePresence mode="wait">
+        {loading && <LoadingScreen key="loader" />}
+      </AnimatePresence>
+
+      {!loading && (
+        <AuroraBackground>
+          <ScrollProgress />
+
+          <Navbar />
+
+          <main className="pt-20">
+            <Hero />
+              <Suspense fallback={null}>
+              <About />
+              <Skills />
+              <Projects />
+              <Contact />
+              </Suspense>
+          </main>
+
+          <Footer />
+
+          <BackToTop />
+        </AuroraBackground>
+      )}
+    </>
   );
 }
 

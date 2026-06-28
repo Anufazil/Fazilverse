@@ -36,7 +36,7 @@ export default function AboutContent() {
       {/* Paragraph */}
 
       <p className="leading-9 text-gray-400">
-        I'm Fazil, a Computer Science Engineer passionate about
+        I'm Anu Fazil, a Computer Science Engineer passionate about
         crafting premium digital experiences using the MERN stack.
         I enjoy creating modern, scalable applications while
         continuously exploring Artificial Intelligence and

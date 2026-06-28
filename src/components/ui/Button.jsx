@@ -7,6 +7,7 @@ export default function Button({
   onClick,
   className = "",
   disabled = false,
+  href, // new prop for links
   ...props
 }) {
   const styles = {
@@ -16,6 +17,39 @@ export default function Button({
     secondary:
       "border border-white/20 bg-white/5 backdrop-blur-md text-white hover:border-cyan-400/50 hover:bg-white/10",
   };
+
+  const commonClasses = `
+    inline-flex
+    items-center
+    justify-center
+    gap-2
+    rounded-full
+    px-6
+    py-3
+    font-semibold
+    transition-all
+    duration-300
+    shadow-lg
+    disabled:cursor-not-allowed
+    disabled:opacity-60
+    ${styles[variant]}
+    ${className}
+  `;
+
+  // If href is provided, render <a> instead of <button>
+  if (href) {
+    return (
+      <motion.a
+        href={href}
+        whileHover={{ scale: 1.05, y: -4 }}
+        whileTap={{ scale: 0.96 }}
+        className={commonClasses}
+        {...props}
+      >
+        {children}
+      </motion.a>
+    );
+  }
 
   return (
     <motion.button
@@ -37,23 +71,7 @@ export default function Button({
               scale: 0.96,
             }
       }
-      className={`
-        inline-flex
-        items-center
-        justify-center
-        gap-2
-        rounded-full
-        px-6
-        py-3
-        font-semibold
-        transition-all
-        duration-300
-        shadow-lg
-        disabled:cursor-not-allowed
-        disabled:opacity-60
-        ${styles[variant]}
-        ${className}
-      `}
+      className={commonClasses}
       {...props}
     >
       {children}

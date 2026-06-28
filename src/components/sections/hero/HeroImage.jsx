@@ -61,6 +61,7 @@ export default function HeroImage() {
       {/* Profile Image */}
       <motion.img
         src={profile}
+        loading="lazy"
         alt="Fazil"
         animate={{
           y: [0, -15, 0],

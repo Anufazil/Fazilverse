@@ -21,6 +21,7 @@ export default function FeaturedProject({ project }) {
             <motion.img
               whileHover={{ scale: 1.08 }}
               transition={{ duration: 0.5 }}
+              loading="lazy"
               src={project.image}
               alt={project.title}
               className="h-full min-h-[380px] w-full object-cover"
