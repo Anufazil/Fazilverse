@@ -24,9 +24,9 @@ export const projects = [
 
     image: passwordAnalyzer,
 
-    github: "https://github.com/YOUR_USERNAME/password-security-analyzer",
+    github: "https://github.com/Anufazil/PasswordSecurityAnalyzer",
 
-    live: "https://password-analyzer.vercel.app",
+    live: "hhttps://password-security-analyser.vercel.app/",
   },
 
   {
