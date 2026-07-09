@@ -1,5 +1,5 @@
 import passwordAnalyzer from "../assets/images/projects/password-analyzer.png";
-import qrMenu from "../assets/images/projects/qr-menu.png";
+import turfbooker from "../assets/images/projects/turfbooker.png";
 import events from "../assets/images/projects/events.png";
 
 export const projects = [
@@ -32,25 +32,28 @@ export const projects = [
   {
     id: 2,
 
-    title: "QR Menu Generator",
+    title: "TurfBooker",
 
     category: "Business",
 
     featured: false,
 
     description:
-      "Restaurant QR menu platform allowing owners to update menus online instantly.",
+      "Modern sports turf booking platform with secure authentication, role-based dashboards, online reservations, and PostgreSQL-powered data management.",
 
     technologies: [
-      "React",
-      "Firebase",
+      "Flask",
+      "JavaScript",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "Bootstrap",
     ],
 
-    image: qrMenu,
+    image: turfbooker,
 
-    github: "#",
+    github: "https://github.com/Anufazil/TurfBooker",
 
-    live: "#",
+    live: "https://turfbooker.onrender.com/",
   },
 
   {
