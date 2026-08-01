@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import profile from "../../../assets/images/profile.png";
+import profile from "../../../assets/images/hero.png";
 import FloatingIcons from "./FloatingIcons";
 import useMousePosition from "../../../hooks/useMousePosition";
 
@@ -60,7 +60,7 @@ export default function HeroImage() {
 
       {/* Profile Image */}
       <motion.img
-        src={profile}
+        src={hero}
         loading="lazy"
         alt="Fazil"
         animate={{
