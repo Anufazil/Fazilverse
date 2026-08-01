@@ -60,7 +60,7 @@ export default function HeroImage() {
 
       {/* Profile Image */}
       <motion.img
-        src={hero}
+        src={profile}
         loading="lazy"
         alt="Fazil"
         animate={{
