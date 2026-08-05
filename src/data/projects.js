@@ -7,7 +7,7 @@ export const projects = [
     id: 1,
 
     title: "Password Security Analyzer",
-
+   
     category: "Cybersecurity",
 
     featured: true,
