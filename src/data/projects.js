@@ -61,7 +61,7 @@ export const projects = [
 
     title: "Event Recommendation AI",
 
-    category: "AI""Business",
+    category: ["AI", "Business"],
 
     featured: false,
 
@@ -77,7 +77,7 @@ export const projects = [
 
     image: events,
 
-    github: "#",
+    github: "https://github.com/Anufazil/Evesta",
 
     live: "#",
   },
