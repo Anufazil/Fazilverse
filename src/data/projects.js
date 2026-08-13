@@ -75,10 +75,36 @@ export const projects = [
       "Python",
     ],
 
-    image: events,
+    image: Evesta,
 
     github: "https://github.com/Anufazil/Evesta",
 
     live: "#",
+  },
+
+  {
+    id: 4,
+
+    title: "RestoCafe Menu",
+
+    category: "Business",
+
+    featured: false,
+
+    description:
+      "A RestoCafe Menu displaying Webpage.",
+
+    technologies: [
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Vite",
+    ],
+
+    image: RestoCafeMenu,
+
+    github: "https://github.com/Anufazil/RestoMenu",
+
+    live: "https://restomenu-five.vercel.app/",
   },
 ];
