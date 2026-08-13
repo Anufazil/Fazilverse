@@ -1,6 +1,8 @@
 import passwordAnalyzer from "../assets/images/projects/password-analyzer.png";
 import turfbooker from "../assets/images/projects/turfbooker.png";
-import events from "../assets/images/projects/events.png";
+import Evesta from "../assets/images/projects/Evesta.png";
+import RestoCafeMenu from "../assets/images/projects/RestoCafeMenu.png";
+
 
 export const projects = [
   {
