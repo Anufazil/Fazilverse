@@ -15,9 +15,6 @@ export default function Hero() {
           <HeroImage />
         </div>
       </Container>
-
-      {/* Scroll Indicator */}
-      <ScrollIndicator />
     </section>
   );
 }
