@@ -1,6 +1,8 @@
 import passwordAnalyzer from "../assets/images/projects/password-analyzer.png";
+import fazilverse from "../assets/images/projects/fazilverse.png";
 import turfbooker from "../assets/images/projects/turfbooker.png";
 import Evesta from "../assets/images/projects/Evesta.png";
+import Expenso from "../assets/images/projects/Expenso.png";
 import RestoCafeMenu from "../assets/images/projects/RestoCafeMenu.png";
 
 
@@ -34,6 +36,33 @@ export const projects = [
   {
     id: 2,
 
+    title: "Fazilverse",
+
+    category: "Personal",
+
+    featured: false,
+
+    description:
+      "A personal portfolio website.",
+
+    technologies: [
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Vite",
+    ],
+
+    image: fazilverse,
+
+    github: "https://github.com/Anufazil/Fazilverse",
+
+    live: "https://fazilverse.vercel.app/",
+  },
+
+
+  {
+    id: 3,
+
     title: "TurfBooker",
 
     category: "Business",
@@ -59,7 +88,7 @@ export const projects = [
   },
 
   {
-    id: 3,
+    id: 4,
 
     title: "Event Recommendation AI",
 
@@ -85,7 +114,35 @@ export const projects = [
   },
 
   {
-    id: 4,
+    id: 5,
+
+    title: "Expenso",
+
+    category: "Personal",
+
+    featured: false,
+
+    description:
+      "An expense tracking website for tracking our income and expenses.",
+
+    technologies: [
+      "React",
+      "javaScript",
+      "Tailwind CSS",
+      "Node.js",
+      "MongoDB",
+      "Express",
+    ],
+
+    image: Expenso,
+
+    github: "https://github.com/Anufazil/Expenso",
+
+    live: "https://expenso-taupe.vercel.app/",
+  },
+  
+  {
+    id: 6,
 
     title: "RestoCafe Menu",
 
@@ -109,4 +166,5 @@ export const projects = [
 
     live: "https://restomenu-five.vercel.app/",
   },
+
 ];
