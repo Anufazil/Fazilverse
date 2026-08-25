@@ -6,6 +6,7 @@ const filters = [
   "AI",
   "Cybersecurity",
   "Business",
+  "Personal",
 ];
 
 export default function ProjectFilters({
