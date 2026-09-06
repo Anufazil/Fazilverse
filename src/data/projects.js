@@ -3,6 +3,7 @@ import fazilverse from "../assets/images/projects/fazilverse.png";
 import turfbooker from "../assets/images/projects/turfbooker.png";
 import Evesta from "../assets/images/projects/Evesta.png";
 import Expenso from "../assets/images/projects/Expenso.png";
+import TextoQuest from "../assets/images/projects/TextoQuest.png";
 import RestoCafeMenu from "../assets/images/projects/RestoCafeMenu.png";
 
 
@@ -118,7 +119,7 @@ export const projects = [
 
     title: "Expenso",
 
-    category: "Personal",
+    category: "Personal""Business",
 
     featured: false,
 
@@ -140,9 +141,38 @@ export const projects = [
 
     live: "https://expenso-taupe.vercel.app/",
   },
-  
+
   {
     id: 6,
+
+    title: "TextoQuest",
+
+    category: "Business""AI",
+
+    featured: false,
+
+    description:
+      "An Note to Questions generating Website.",
+
+    technologies: [
+      "React",
+      "MongoDB",
+      "Express",
+      "Node.js",
+      "Python",
+      "Tailwind CSS",
+      "Vite",
+    ],
+
+    image: TextoQuest,
+
+    github: "https://github.com/Anufazil/TextoQuest",
+
+    live: "https://textoquest.vercel.app/",
+  },
+  
+  {
+    id: 7,
 
     title: "RestoCafe Menu",
 
