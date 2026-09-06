@@ -119,7 +119,7 @@ export const projects = [
 
     title: "Expenso",
 
-    category: "Personal""Business",
+    category: "Personal",
 
     featured: false,
 
@@ -147,7 +147,7 @@ export const projects = [
 
     title: "TextoQuest",
 
-    category: "Business""AI",
+    category: "Business",
 
     featured: false,
 
