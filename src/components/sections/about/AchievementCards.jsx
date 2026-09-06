@@ -13,7 +13,7 @@ import AnimatedDivider from "../../ui/divider/AnimatedDivider";
 const achievements = [
   {
     icon: <FaLaptopCode />,
-    value: "5+",
+    value: "10+",
     title: "Projects",
   },
   {
