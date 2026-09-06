@@ -1,7 +1,7 @@
 export default function HeroStats() {
   const stats = [
     {
-      number: "5+",
+      number: "10+",
       label: "Projects",
     },
     {
