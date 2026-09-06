@@ -119,7 +119,7 @@ export const projects = [
 
     title: "Expenso",
 
-    category: "Personal",
+    category: ["Personal", "Business"],
 
     featured: false,
 
