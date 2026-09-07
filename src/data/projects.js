@@ -170,9 +170,35 @@ export const projects = [
 
     live: "https://textoquest.vercel.app/",
   },
-  
+
   {
     id: 7,
+
+    title: "Cybrews",
+
+    category: "Cybersecurity",
+
+    featured: false,
+
+    description:
+      "A dark-themed daily cybersecurity news feed.",
+
+    technologies: [
+      "Node.js",
+      "Next.js",
+      "Tailwind CSS",
+      "Supabase",
+    ],
+
+    image: RestoCafeMenu,
+
+    github: "https://github.com/Anufazil/Cybrews",
+
+    live: "https://cybrews.vercel.app/",
+  },
+
+  {
+    id: 8,
 
     title: "RestoCafe Menu",
 
