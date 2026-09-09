@@ -4,6 +4,8 @@ import turfbooker from "../assets/images/projects/turfbooker.png";
 import Evesta from "../assets/images/projects/Evesta.png";
 import Expenso from "../assets/images/projects/Expenso.png";
 import TextoQuest from "../assets/images/projects/TextoQuest.png";
+import ABDU from "../assets/images/projects/ABDU.png";
+import Cybrews from "../assets/images/projects/Cybrews.png";
 import RestoCafeMenu from "../assets/images/projects/RestoCafeMenu.png";
 
 
@@ -174,6 +176,32 @@ export const projects = [
   {
     id: 7,
 
+    title: "ABDU-Artificial Brain for Digital Utility",
+
+    category: "AI",
+
+    featured: false,
+
+    description:
+      "An intelligent, concise AI companion—ready to help you with information, ideas, and digital tasks anytime.",
+
+    technologies: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Groq API",
+    ],
+
+    image: ABDU,
+
+    github: "https://github.com/Anufazil/ABDU",
+
+    live: "https://abdu-orpin.vercel.app/",
+  },
+  
+  {
+    id: 8,
+
     title: "Cybrews",
 
     category: "Cybersecurity",
@@ -190,7 +218,7 @@ export const projects = [
       "Supabase",
     ],
 
-    image: RestoCafeMenu,
+    image: Cybrews,
 
     github: "https://github.com/Anufazil/Cybrews",
 
@@ -198,7 +226,7 @@ export const projects = [
   },
 
   {
-    id: 8,
+    id: 9,
 
     title: "RestoCafe Menu",
 
