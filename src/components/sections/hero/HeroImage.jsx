@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 import profile from "../../../assets/images/hero.webp";
 
+//import profile from "../../../assets/images/hero.png";
+//import FloatingIcons from "./FloatingIcons";
+//import useMousePosition from "../../../hooks/useMousePosition";
+
 export default function HeroImage() {
   return (
     <motion.div

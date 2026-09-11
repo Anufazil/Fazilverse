@@ -14,7 +14,6 @@ export default function Hero() {
           <HeroImage />
         </div>
       </Container>
-
     </section>
   );
 }

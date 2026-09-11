@@ -8,6 +8,17 @@ import ABDU from "../assets/images/projects/ABDU.webp";
 import Cybrews from "../assets/images/projects/Cybrews.webp";
 import RestoCafeMenu from "../assets/images/projects/RestoCafeMenu.webp";
 
+//import passwordAnalyzer from "../assets/images/projects/password-analyzer.png";
+//import fazilverse from "../assets/images/projects/fazilverse.png";
+//import turfbooker from "../assets/images/projects/turfbooker.png";
+//import Evesta from "../assets/images/projects/Evesta.png";
+//import Expenso from "../assets/images/projects/Expenso.png";
+//import TextoQuest from "../assets/images/projects/TextoQuest.png";
+//import ABDU from "../assets/images/projects/ABDU.png";
+//import Cybrews from "../assets/images/projects/Cybrews.png";
+//import RestoCafeMenu from "../assets/images/projects/RestoCafeMenu.png";
+
+
 // Featured projects — shown as large, priority-ordered cards.
 export const featuredProjects = [
   {
