@@ -16,19 +16,14 @@ import SuccessAnimation from "./SuccessAnimation";
 
 export default function ContactForm() {
   const formRef = useRef();
-
   const [loading, setLoading] = useState(false);
-
   const [sent, setSent] = useState(false);
 
   const {
     register,
     handleSubmit,
     reset,
-    formState: {
-      errors,
-      isValid,
-    },
+    formState: { errors, isValid },
   } = useForm({
     resolver: zodResolver(contactSchema),
     mode: "onChange",
@@ -46,45 +41,32 @@ export default function ContactForm() {
       );
 
       toast.success("Message sent successfully!");
-
       reset();
-
       setSent(true);
-        setTimeout(() => {
-        setSent(false);
-        }, 3000);
-
+      setTimeout(() => setSent(false), 3000);
     } catch (error) {
       console.error(error);
-
       toast.error("Failed to send message.");
     } finally {
       setLoading(false);
     }
   };
+
   if (sent) {
-  return <SuccessAnimation />;
+    return <SuccessAnimation />;
   }
+
   return (
     <form
       ref={formRef}
       onSubmit={handleSubmit(sendEmail)}
-      className="
-        rounded-3xl
-        border
-        border-white/10
-        bg-white/5
-        p-8
-        backdrop-blur-xl
-        shadow-[0_0_30px_rgba(0,255,255,0.08)]
-      "
+      className="rounded-xl border border-line bg-surface p-6 sm:p-8"
     >
-      <h3 className="mb-8 text-2xl font-bold">
-        Send Me a Message
+      <h3 className="mb-6 text-xl font-semibold text-ink-text">
+        Send a message
       </h3>
 
-      <div className="grid gap-6">
-
+      <div className="grid gap-5">
         <InputField
           label="Full Name"
           placeholder="John Doe"
@@ -114,18 +96,10 @@ export default function ContactForm() {
           {...register("message")}
         />
 
-        <Button
-          type="submit"
-          disabled={!isValid || loading}
-          className="mt-2 w-full"
-        >
-          <FaPaperPlane
-            className={loading ? "animate-pulse" : ""}
-          />
-
+        <Button type="submit" disabled={!isValid || loading} className="mt-2 w-full">
+          <FaPaperPlane className={loading ? "animate-pulse" : ""} />
           {loading ? "Sending..." : "Send Message"}
         </Button>
-
       </div>
     </form>
   );

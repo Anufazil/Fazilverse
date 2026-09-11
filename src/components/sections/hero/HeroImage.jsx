@@ -1,78 +1,38 @@
 import { motion } from "framer-motion";
-import profile from "../../../assets/images/profile.png";
-import FloatingIcons from "./FloatingIcons";
-import useMousePosition from "../../../hooks/useMousePosition";
+import profile from "../../../assets/images/hero.webp";
 
 export default function HeroImage() {
-  const { x, y } = useMousePosition();
-
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-        scale: 0.8,
-        y: 40,
-      }}
-      animate={{
-        opacity: 1,
-        scale: 1,
-        x: (x - window.innerWidth / 2) / 40,
-        y: (y - window.innerHeight / 2) / 40,
-      }}
-      transition={{
-        opacity: {
-          duration: 0.8,
-          delay: 0.8,
-        },
-        scale: {
-          duration: 0.8,
-          delay: 0.8,
-        },
-        x: {
-          type: "spring",
-          stiffness: 80,
-          damping: 20,
-        },
-        y: {
-          type: "spring",
-          stiffness: 80,
-          damping: 20,
-        },
-      }}
-      className="relative flex items-center justify-center"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.3 }}
+      className="relative mx-auto flex items-center justify-center"
     >
-      {/* Background Glow */}
-      <motion.div
-        animate={{
-          scale: [1, 1.08, 1],
-          opacity: [0.5, 0.8, 0.5],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute h-[380px] w-[380px] rounded-full bg-cyan-500/20 blur-3xl"
-      />
+      {/* Restrained glow */}
+      <div className="absolute h-[320px] w-[320px] rounded-full bg-signal/10 blur-[100px]" />
 
-      {/* Floating Tech Icons */}
-      <FloatingIcons />
+      {/* Frame */}
+      <div className="relative">
+        <img
+          src={profile}
+          loading="lazy"
+          alt="Anu Fazil P"
+          className="relative z-10 h-72 w-72 rounded-2xl border border-line-strong object-cover shadow-2xl sm:h-80 sm:w-80"
+        />
 
-      {/* Profile Image */}
-      <motion.img
-        src={profile}
-        loading="lazy"
-        alt="Fazil"
-        animate={{
-          y: [0, -15, 0],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="relative z-10 h-80 w-80 rounded-full border-4 border-cyan-400/30 object-cover shadow-2xl"
-      />
+        {/* Corner brackets */}
+        <span className="pointer-events-none absolute -left-3 -top-3 h-8 w-8 rounded-tl-lg border-l-2 border-t-2 border-signal/60" />
+        <span className="pointer-events-none absolute -right-3 -top-3 h-8 w-8 rounded-tr-lg border-r-2 border-t-2 border-signal/60" />
+        <span className="pointer-events-none absolute -bottom-3 -left-3 h-8 w-8 rounded-bl-lg border-b-2 border-l-2 border-signal/60" />
+        <span className="pointer-events-none absolute -bottom-3 -right-3 h-8 w-8 rounded-br-lg border-b-2 border-r-2 border-signal/60" />
+
+        {/* Status tag */}
+        <div className="absolute -bottom-5 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full border border-line-strong bg-surface px-4 py-2 shadow-lg">
+          <span className="h-2 w-2 rounded-full bg-status" />
+          <span className="font-mono text-xs text-ink-text">Open to work</span>
+        </div>
+      </div>
     </motion.div>
   );
 }

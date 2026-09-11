@@ -13,7 +13,6 @@ export default function SkillsGrid() {
 
   return (
     <>
-
       <SkillTabs
         categories={categories}
         active={active}
@@ -21,36 +20,19 @@ export default function SkillsGrid() {
       />
 
       <AnimatePresence mode="wait">
-
         <motion.div
           key={active}
-          initial={{
-            opacity: 0,
-            y: 25,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          exit={{
-            opacity: 0,
-            y: -25,
-          }}
-          transition={{
-            duration: 0.35,
-          }}
-          className="grid gap-6 md:grid-cols-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {skills[active].map((skill) => (
-            <SkillCard
-              key={skill.name}
-              skill={skill}
-            />
+            <SkillCard key={skill.name} skill={skill} />
           ))}
         </motion.div>
-
       </AnimatePresence>
-
     </>
   );
 }

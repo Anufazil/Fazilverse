@@ -4,50 +4,30 @@ export default function SectionHeading({
   badge,
   title,
   subtitle,
+  align = "left",
 }) {
+  const isCenter = align === "center";
+
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-        y: 40,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="mb-16 text-center"
+      transition={{ duration: 0.5 }}
+      className={`mb-14 max-w-2xl ${isCenter ? "mx-auto text-center" : ""}`}
     >
-      <p
-        className="
-        uppercase
-        tracking-[0.4em]
-        text-cyan-400
-        text-sm
-        "
-      >
-        {badge}
-      </p>
+      {badge && (
+        <p className="mb-3 font-mono text-sm text-signal">
+          {badge}
+        </p>
+      )}
 
-      <h2
-        className="
-        mt-5
-        text-5xl
-        font-bold
-        "
-      >
+      <h2 className="text-3xl font-bold sm:text-4xl">
         {title}
       </h2>
 
       {subtitle && (
-        <p
-          className="
-          mx-auto
-          mt-6
-          max-w-2xl
-          text-gray-400
-          "
-        >
+        <p className={`mt-4 text-muted ${isCenter ? "mx-auto" : ""}`}>
           {subtitle}
         </p>
       )}

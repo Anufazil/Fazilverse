@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
-import AuroraBackground from "./components/ui/Background/AuroraBackground";
+import TechBackground from "./components/ui/Background/TechBackground";
 import LoadingScreen from "./components/ui/LoadingScreen";
 import ScrollProgress from "./components/ui/ScrollProgress";
 import BackToTop from "./components/ui/BackToTop";
@@ -14,6 +14,9 @@ import { lazy, Suspense } from "react";
 const About = lazy(() => import("./components/sections/about/About"));
 const Skills = lazy(() => import("./components/sections/skills/Skills"));
 const Projects = lazy(() => import("./components/sections/projects/Projects"));
+const Growth = lazy(() => import("./components/sections/growth/Growth"));
+const Journey = lazy(() => import("./components/sections/journey/Journey"));
+const Gallery = lazy(() => import("./components/sections/gallery/Gallery"));
 const Contact = lazy(() => import("./components/sections/contact/Contact"));
 import Footer from "./components/layout/footer/Footer";
 
@@ -35,7 +38,7 @@ function App() {
       </AnimatePresence>
 
       {!loading && (
-        <AuroraBackground>
+        <TechBackground>
           <ScrollProgress />
 
           <Navbar />
@@ -46,6 +49,9 @@ function App() {
               <About />
               <Skills />
               <Projects />
+              <Growth />
+              <Journey />
+              <Gallery />
               <Contact />
               </Suspense>
           </main>
@@ -53,7 +59,7 @@ function App() {
           <Footer />
 
           <BackToTop />
-        </AuroraBackground>
+        </TechBackground>
       )}
     </>
   );

@@ -1,5 +1,37 @@
 @import "tailwindcss";
 
+@theme {
+  --color-ink: #0A0D12;
+  --color-surface: #12161D;
+  --color-surface-raised: #171C24;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-line-strong: rgba(255, 255, 255, 0.14);
+  --color-signal: #4F9DFF;
+  --color-signal-soft: #4F9DFF26;
+  --color-status: #34D399;
+  --color-ink-text: #E7EAF0;
+  --color-muted: #8C94A6;
+  --color-on-signal: #0A0D12;
+
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+
+[data-theme="light"] {
+  --color-ink: #F6F8FB;
+  --color-surface: #FFFFFF;
+  --color-surface-raised: #EEF1F6;
+  --color-line: rgba(16, 21, 28, 0.10);
+  --color-line-strong: rgba(16, 21, 28, 0.16);
+  --color-signal: #2E6FEE;
+  --color-signal-soft: #2E6FEE1A;
+  --color-status: #12946B;
+  --color-ink-text: #10151C;
+  --color-muted: #5B6472;
+  --color-on-signal: #FFFFFF;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -7,4 +39,21 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  background: var(--color-ink);
+  color: var(--color-ink-text);
+  font-family: var(--font-body);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

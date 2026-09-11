@@ -6,9 +6,8 @@ export default function GradientText({
     <span
       className={`
         bg-gradient-to-r
-        from-violet-500
-        via-fuchsia-400
-        to-cyan-400
+        from-signal
+        to-status
         bg-clip-text
         text-transparent
         ${className}

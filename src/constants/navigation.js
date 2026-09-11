@@ -16,6 +16,14 @@ export const NAV_LINKS = [
     href: "#projects",
   },
   {
+    name: "Journey",
+    href: "#journey",
+  },
+  {
+    name: "Gallery",
+    href: "#gallery",
+  },
+  {
     name: "Contact",
     href: "#contact",
   },

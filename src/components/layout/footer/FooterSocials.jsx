@@ -1,75 +1,36 @@
-import { motion } from "framer-motion";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-  FaWhatsapp,
-  FaInstagram,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp, FaInstagram } from "react-icons/fa";
+import { SITE } from "../../../constants/site";
 
 const socials = [
-  {
-    icon: FaGithub,
-    href: "https://github.com/Anufazil",
-  },
-  {
-    icon: FaLinkedin,
-    href: "https://linkedin.com/in/anufazilp",
-  },
-  {
-    icon: FaEnvelope,
-    href: "anufazil08@gmail.com",
-  },
-  {
-    icon: FaWhatsapp,
-    href: "https://wa.me/8590321727",
-  },
-  {
-    icon: FaInstagram,
-    href: "https://www.instagram.com/faz__zil08",
-  },
+  { icon: FaGithub, href: SITE.github, label: "GitHub" },
+  { icon: FaLinkedin, href: SITE.linkedin, label: "LinkedIn" },
+  { icon: FaWhatsapp, href: SITE.whatsapp, label: "WhatsApp" },
+  { icon: FaInstagram, href: SITE.instagram, label: "Instagram" },
+  { icon: FaEnvelope, href: `mailto:${SITE.email}`, label: "Email" },
 ];
 
 export default function FooterSocials() {
   return (
-    <div className="mt-8 flex justify-center gap-5">
-      {socials.map((item, index) => {
+    <div className="mt-6 flex flex-wrap gap-3">
+      {socials.map((item) => {
         const Icon = item.icon;
 
         return (
-          <motion.a
-            key={index}
+          <a
+            key={item.label}
             href={item.href}
-            target="_blank"
-            rel="noreferrer"
-            whileHover={{
-              y: -6,
-              scale: 1.15,
-            }}
-            whileTap={{
-              scale: 0.9,
-            }}
+            target={item.href.startsWith("http") ? "_blank" : undefined}
+            rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+            aria-label={item.label}
             className="
-              flex
-              h-12
-              w-12
-              items-center
-              justify-center
-              rounded-full
-              border
-              border-white/10
-              bg-white/5
-              text-xl
-              text-gray-300
-              backdrop-blur-xl
-              transition-all
-              hover:border-cyan-400
-              hover:text-cyan-300
-              hover:shadow-[0_0_25px_rgba(34,211,238,.25)]
+              flex h-10 w-10 items-center justify-center rounded-lg
+              border border-line text-muted
+              transition-colors duration-200
+              hover:border-signal/50 hover:text-signal
             "
           >
             <Icon />
-          </motion.a>
+          </a>
         );
       })}
     </div>

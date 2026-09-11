@@ -6,88 +6,44 @@ export default function BackToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const toggleVisibility = () => {
-      setVisible(window.scrollY > 500);
-    };
-
+    const toggleVisibility = () => setVisible(window.scrollY > 500);
     window.addEventListener("scroll", toggleVisibility);
-
-    return () =>
-      window.removeEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
-  const scrollTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+  const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <AnimatePresence>
       {visible && (
         <motion.button
           onClick={scrollTop}
-          initial={{
-            opacity: 0,
-            scale: 0.5,
-            y: 30,
-          }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-            y: 0,
-          }}
-          exit={{
-            opacity: 0,
-            scale: 0.5,
-            y: 30,
-          }}
-          whileHover={{
-            scale: 1.1,
-            y: -6,
-          }}
-          whileTap={{
-            scale: 0.92,
-          }}
-          transition={{
-            type: "spring",
-            stiffness: 350,
-            damping: 20,
-          }}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 15 }}
+          transition={{ duration: 0.2 }}
+          aria-label="Back to top"
           className="
             fixed
             bottom-8
             right-8
             z-[999]
             flex
-            h-14
-            w-14
+            h-12
+            w-12
             items-center
             justify-center
-            rounded-full
+            rounded-lg
             border
-            border-cyan-400/30
-            bg-white/10
-            text-cyan-300
-            backdrop-blur-xl
-            shadow-[0_0_25px_rgba(34,211,238,.25)]
-            transition-all
-            hover:border-cyan-300
-            hover:shadow-[0_0_40px_rgba(34,211,238,.55)]
+            border-line-strong
+            bg-surface
+            text-ink-text
+            transition-colors
+            hover:border-signal/50
+            hover:text-signal
           "
         >
-          <motion.div
-            animate={{
-              y: [0, -3, 0],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 1.5,
-            }}
-          >
-            <FaArrowUp size={18} />
-          </motion.div>
+          <FaArrowUp size={16} />
         </motion.button>
       )}
     </AnimatePresence>

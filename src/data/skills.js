@@ -4,6 +4,12 @@ import {
   FaGitAlt,
   FaPython,
   FaCss3Alt,
+  FaGithub,
+  FaNetworkWired,
+  FaLinux,
+  FaShieldAlt,
+  FaUserShield,
+  FaUsersCog,
 } from "react-icons/fa";
 
 import {
@@ -13,109 +19,61 @@ import {
   SiExpress,
   SiMongodb,
   SiMysql,
-  SiPostman,
-  SiTensorflow,
+  SiFirebase,
+  SiFastapi,
+  SiDjango,
+  SiBootstrap,
+  SiFramer,
+  SiVite,
+  SiVercel,
+  SiRender,
+  SiJsonwebtokens,
 } from "react-icons/si";
 
+import { TbApi } from "react-icons/tb";
 import { VscVscode } from "react-icons/vsc";
 
 export const skills = {
   Frontend: [
-    {
-      name: "React",
-      level: 90,
-      icon: FaReact,
-      color: "text-cyan-400",
-    },
-    {
-      name: "JavaScript",
-      level: 90,
-      icon: SiJavascript,
-      color: "text-yellow-400",
-    },
-    {
-      name: "HTML5",
-      level: 95,
-      icon: SiHtml5,
-      color: "text-orange-500",
-    },
-    {
-      name: "CSS3",
-      level: 90,
-      icon: FaCss3Alt,
-      color: "text-blue-400",
-    },
-    {
-      name: "Tailwind",
-      level: 88,
-      icon: SiTailwindcss,
-      color: "text-cyan-300",
-    },
+    { name: "JavaScript", icon: SiJavascript },
+    { name: "React.js", icon: FaReact },
+    { name: "Vite", icon: SiVite },
+    { name: "HTML5", icon: SiHtml5 },
+    { name: "CSS3", icon: FaCss3Alt },
+    { name: "Tailwind CSS", icon: SiTailwindcss },
+    { name: "Bootstrap", icon: SiBootstrap },
+    { name: "Framer Motion", icon: SiFramer },
   ],
 
   Backend: [
-    {
-      name: "Node.js",
-      level: 85,
-      icon: FaNodeJs,
-      color: "text-green-500",
-    },
-    {
-      name: "Express",
-      level: 82,
-      icon: SiExpress,
-      color: "text-gray-300",
-    },
+    { name: "Node.js", icon: FaNodeJs },
+    { name: "Express.js", icon: SiExpress },
+    { name: "Python", icon: FaPython },
+    { name: "FastAPI", icon: SiFastapi },
+    { name: "Django", icon: SiDjango },
+    { name: "REST APIs", icon: TbApi },
   ],
 
-  Database: [
-    {
-      name: "MongoDB",
-      level: 82,
-      icon: SiMongodb,
-      color: "text-green-400",
-    },
-    {
-      name: "MySQL",
-      level: 75,
-      icon: SiMysql,
-      color: "text-blue-500",
-    },
+  Databases: [
+    { name: "MongoDB", icon: SiMongodb },
+    { name: "MySQL", icon: SiMysql },
+    { name: "Firebase", icon: SiFirebase },
   ],
 
-  AI: [
-    {
-      name: "Python",
-      level: 75,
-      icon: FaPython,
-      color: "text-yellow-400",
-    },
-    {
-      name: "TensorFlow",
-      level: 60,
-      icon: SiTensorflow,
-      color: "text-orange-500",
-    },
+  Security: [
+    { name: "Authentication", icon: FaUserShield },
+    { name: "JWT", icon: SiJsonwebtokens },
+    { name: "RBAC", icon: FaUsersCog },
+    { name: "Networking fundamentals", icon: FaNetworkWired },
+    { name: "Linux fundamentals", icon: FaLinux },
+    { name: "Web security fundamentals", icon: FaShieldAlt },
   ],
 
   Tools: [
-    {
-      name: "Git",
-      level: 85,
-      icon: FaGitAlt,
-      color: "text-orange-500",
-    },
-    {
-      name: "VS Code",
-      level: 95,
-      icon: VscVscode,
-      color: "text-blue-500",
-    },
-    {
-      name: "Postman",
-      level: 82,
-      icon: SiPostman,
-      color: "text-orange-400",
-    },
+    { name: "Git", icon: FaGitAlt },
+    { name: "GitHub", icon: FaGithub },
+    { name: "VS Code", icon: VscVscode },
+    { name: "Vercel", icon: SiVercel },
+    { name: "Render", icon: SiRender },
   ],
 };

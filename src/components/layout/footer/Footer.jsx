@@ -1,45 +1,44 @@
-import GradientText from "../../ui/GradientText";
 import Container from "../../ui/Container";
+import { SITE } from "../../../constants/site";
 
 import FooterLinks from "./FooterLinks";
+import FooterServices from "./FooterServices";
 import FooterSocials from "./FooterSocials";
 
 export default function Footer() {
   return (
-    <footer className="relative mt-32 border-t border-white/10 bg-white/5 backdrop-blur-xl">
-
+    <footer className="relative mt-32 border-t border-line">
       <Container>
+        <div className="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
 
-        <div className="py-20 text-center">
+          <div>
+            <h2 className="font-mono text-lg font-semibold text-ink-text">
+              {SITE.name}
+            </h2>
 
-          <h2 className="text-4xl font-bold">
-            <GradientText>
-              FazilVerse
-            </GradientText>
-          </h2>
+            <p className="mt-2 text-sm text-muted">
+              {SITE.role}
+            </p>
 
-          <p className="mx-auto mt-5 max-w-xl text-gray-400">
-            Building modern web experiences with
-            MERN, Artificial Intelligence and
-            Cybersecurity.
-          </p>
+            <p className="mt-1 text-sm text-muted">
+              {SITE.focus}
+            </p>
 
-          <FooterSocials />
+            <FooterSocials />
+          </div>
 
           <FooterLinks />
 
-          <div className="my-10 h-px bg-white/10" />
-
-          <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Fazil.
-            Built with React, Tailwind CSS &
-            Framer Motion.
-          </p>
+          <FooterServices />
 
         </div>
 
+        <div className="border-t border-line py-6">
+          <p className="text-sm text-muted">
+            © {new Date().getFullYear()} {SITE.name}.
+          </p>
+        </div>
       </Container>
-
     </footer>
   );
 }

@@ -1,118 +1,77 @@
 import { motion } from "framer-motion";
-import {
-  FaGithub,
-  FaExternalLinkAlt,
-} from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaFileAlt } from "react-icons/fa";
 
 import MouseSpotlightCard from "../../ui/cards/MouseSpotlightCard";
 import TechBadge from "./TechBadge";
+import ProjectImage from "./ProjectImage";
 
-export default function FeaturedProject({ project }) {
+export default function FeaturedProject({ project, onOpenCaseStudy, reverse }) {
   return (
-    <div className="mb-24">
-      <MouseSpotlightCard className="overflow-hidden p-0">
+    <MouseSpotlightCard className="overflow-hidden p-0">
+      <div className={`grid items-stretch lg:grid-cols-2 ${reverse ? "lg:[direction:rtl]" : ""}`}>
 
-        <div className="grid items-center lg:grid-cols-2">
-
-          {/* LEFT IMAGE */}
-
-          <div className="group relative overflow-hidden">
-
-            <motion.img
-              whileHover={{ scale: 1.08 }}
-              transition={{ duration: 0.5 }}
-              loading="lazy"
-              src={project.image}
-              alt={project.title}
-              className="h-full min-h-[380px] w-full object-cover"
+        <div className="relative overflow-hidden" style={{ direction: "ltr" }}>
+          <motion.div whileHover={{ scale: 1.04 }} transition={{ duration: 0.4 }} className="h-full">
+            <ProjectImage
+              image={project.image}
+              title={project.title}
+              className="h-full min-h-[280px] w-full"
             />
+          </motion.div>
+        </div>
 
-            {/* Dark Overlay */}
-
-            <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
-
+        <div className="flex flex-col justify-center p-6 sm:p-10" style={{ direction: "ltr" }}>
+          <div className="mb-4 flex items-center gap-3">
+            <span className="font-mono text-sm text-signal">{project.priority}</span>
+            <span className="text-xs uppercase tracking-wider text-muted">{project.category}</span>
           </div>
 
-          {/* RIGHT CONTENT */}
+          <h3 className="mb-4 text-2xl font-bold text-ink-text sm:text-3xl">
+            {project.title}
+          </h3>
 
-          <div className="flex flex-col justify-center p-10 lg:p-14">
+          <p className="mb-6 leading-7 text-muted">
+            {project.description}
+          </p>
 
-            {/* Badge */}
+          <div className="mb-6 flex flex-wrap gap-2">
+            {project.technologies.map((tech) => (
+              <TechBadge key={tech} tech={tech} />
+            ))}
+          </div>
 
-            <span className="mb-6 inline-flex w-fit items-center rounded-full border border-cyan-400/30 bg-cyan-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">
-              Featured
-            </span>
-
-            {/* Title */}
-
-            <h2 className="mb-6 text-3xl font-bold leading-tight lg:text-5xl">
-              {project.title}
-            </h2>
-
-            {/* Description */}
-
-            <p className="mb-8 text-lg leading-8 text-gray-400">
-              {project.description}
-            </p>
-
-            {/* Tech */}
-
-            <div className="mb-10 flex flex-wrap gap-3">
-              {project.technologies.map((tech) => (
-                <TechBadge
-                  key={tech}
-                  tech={tech}
-                />
-              ))}
-            </div>
-
-            {/* Buttons */}
-
-            <div className="flex flex-wrap gap-4">
-
-              <motion.a
-                whileHover={{
-                  y: -3,
-                  scale: 1.03,
-                }}
-                whileTap={{
-                  scale: 0.95,
-                }}
+          <div className="flex flex-wrap gap-3">
+            {project.github && (
+              <a
                 href={project.github}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-3 rounded-xl bg-white/5 px-6 py-3 font-medium transition-all duration-300 hover:bg-cyan-500/10 hover:shadow-lg hover:shadow-cyan-500/20"
+                className="flex items-center gap-2 rounded-lg border border-line px-5 py-2.5 text-sm font-medium text-ink-text transition-colors duration-200 hover:border-signal/50"
               >
-                <FaGithub />
-                GitHub
-                <span>→</span>
-              </motion.a>
+                <FaGithub /> GitHub
+              </a>
+            )}
 
-              <motion.a
-                whileHover={{
-                  y: -3,
-                  scale: 1.03,
-                }}
-                whileTap={{
-                  scale: 0.95,
-                }}
+            {project.live && (
+              <a
                 href={project.live}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-3 rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-black transition-all duration-300 hover:bg-cyan-400 hover:shadow-lg hover:shadow-cyan-400/40"
+                className="flex items-center gap-2 rounded-lg bg-signal px-5 py-2.5 text-sm font-medium text-on-signal transition-colors duration-200 hover:bg-signal/90"
               >
-                <FaExternalLinkAlt />
-                Live Demo
-                <span>→</span>
-              </motion.a>
+                <FaExternalLinkAlt /> Live Demo
+              </a>
+            )}
 
-            </div>
-
+            <button
+              onClick={() => onOpenCaseStudy(project)}
+              className="flex items-center gap-2 rounded-lg border border-line px-5 py-2.5 text-sm font-medium text-ink-text transition-colors duration-200 hover:border-signal/50"
+            >
+              <FaFileAlt /> Case Study
+            </button>
           </div>
-
         </div>
-
-      </MouseSpotlightCard>
-    </div>
+      </div>
+    </MouseSpotlightCard>
   );
 }

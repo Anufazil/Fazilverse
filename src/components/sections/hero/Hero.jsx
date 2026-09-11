@@ -1,7 +1,6 @@
 import Container from "../../ui/Container";
 import HeroContent from "./HeroContent";
 import HeroImage from "./HeroImage";
-import ScrollIndicator from "../../ui/ScrollIndicator";
 
 export default function Hero() {
   return (
@@ -16,8 +15,6 @@ export default function Hero() {
         </div>
       </Container>
 
-      {/* Scroll Indicator */}
-      <ScrollIndicator />
     </section>
   );
 }

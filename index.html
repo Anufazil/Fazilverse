@@ -4,79 +4,57 @@
   <meta charset="UTF-8" />
 
   <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <script>
+    (function () {
+      var saved = localStorage.getItem("theme");
+      document.documentElement.setAttribute("data-theme", saved || "dark");
+    })();
+  </script>
 
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   />
 
-  <title>FazilVerse | MERN Stack Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <title>Fazilverse | Full-Stack Web Developer &amp; Cybersecurity</title>
 
   <meta
     name="description"
-    content="FazilVerse is the personal portfolio of Fazil, showcasing MERN Stack projects, Artificial Intelligence, Cyber Security, UI/UX and modern web development."
+    content="Anu Fazil P — Full-Stack Web Developer building modern web applications and developing expertise in cybersecurity and secure web applications."
   />
 
   <meta
     name="keywords"
-    content="Fazil, MERN Developer, React, Node.js, Portfolio, Cyber Security, AI, Full Stack Developer"
+    content="Anu Fazil P, Full-Stack Developer, MERN Stack, React Developer, Cybersecurity, Secure Web Applications, Portfolio"
   />
 
-  <meta
-    name="author"
-    content="Fazil"
-  />
+  <meta name="author" content="Anu Fazil P" />
 
-  <meta
-    name="theme-color"
-    content="#050816"
-  />
+  <meta name="theme-color" content="#0A0D12" />
+
+  <link rel="canonical" href="https://fazilverse.vercel.app/" />
 
   <!-- Open Graph -->
-
   <meta property="og:type" content="website" />
-
-  <meta
-    property="og:title"
-    content="FazilVerse | MERN Stack Developer"
-  />
-
-  <meta
-    property="og:description"
-    content="Explore projects, skills and achievements of Fazil."
-  />
-
-  <meta
-    property="og:image"
-    content="/preview.png"
-  />
-
-  <meta
-    property="og:url"
-    content="https://YOUR_DOMAIN.com"
-  />
+  <meta property="og:title" content="Anu Fazil P | Full-Stack Web Developer & Cybersecurity" />
+  <meta property="og:description" content="Full-Stack Web Developer building modern web applications and developing expertise in cybersecurity and secure web applications." />
+  <meta property="og:image" content="/preview.png" />
+  <meta property="og:url" content="https://fazilverse.vercel.app/" />
 
   <!-- Twitter -->
-
-  <meta
-    name="twitter:card"
-    content="summary_large_image"
-  />
-
-  <meta
-    name="twitter:title"
-    content="FazilVerse | MERN Stack Developer"
-  />
-
-  <meta
-    name="twitter:description"
-    content="Modern portfolio built with React, Tailwind CSS & Framer Motion."
-  />
-
-  <meta
-    name="twitter:image"
-    content="/preview.png"
-  />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Anu Fazil P | Full-Stack Web Developer & Cybersecurity" />
+  <meta name="twitter:description" content="Full-Stack Web Developer building modern web applications and developing expertise in cybersecurity and secure web applications." />
+  <meta name="twitter:image" content="/preview.png" />
 </head>
   <body>
     <div id="root"></div>

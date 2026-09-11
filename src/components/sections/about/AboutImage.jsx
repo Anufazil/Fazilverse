@@ -1,101 +1,43 @@
 import { motion } from "framer-motion";
-import profile from "../../../assets/images/profile.png";
-import {
-  FaCode,
-  FaCircle,
-} from "react-icons/fa";
+import profile from "../../../assets/images/profile.webp";
+import { FaCode, FaCircle } from "react-icons/fa";
 
 export default function AboutImage() {
   return (
     <motion.div
-      initial={{
-        opacity: 0,
-        x: -80,
-      }}
-      whileInView={{
-        opacity: 1,
-        x: 0,
-      }}
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{
-        duration: 0.8,
-      }}
-      className="relative flex justify-center"
+      transition={{ duration: 0.5 }}
+      className="relative mx-auto flex justify-center"
     >
-      {/* Aurora Glow */}
+      <div className="absolute h-[360px] w-[360px] rounded-full bg-signal/10 blur-[100px]" />
 
-      <div className="absolute h-[470px] w-[470px] rounded-full bg-cyan-500/20 blur-[120px]" />
+      <div className="relative">
+        <img
+          src={profile}
+          loading="lazy"
+          alt="Anu Fazil P"
+          className="relative z-10 h-[340px] w-[340px] rounded-2xl border border-line-strong object-cover shadow-xl"
+        />
 
-      {/* Animated Border */}
+        <span className="pointer-events-none absolute -left-3 -top-3 h-8 w-8 rounded-tl-lg border-l-2 border-t-2 border-signal/60" />
+        <span className="pointer-events-none absolute -bottom-3 -right-3 h-8 w-8 rounded-br-lg border-b-2 border-r-2 border-signal/60" />
 
-      <motion.div
-        animate={{
-          rotate: 360,
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-        className="absolute h-[430px] w-[430px] rounded-[40px] bg-gradient-to-r from-cyan-400 via-purple-500 to-cyan-400 p-[3px]"
-      >
-        <div className="h-full w-full rounded-[38px] bg-[#050816]" />
-      </motion.div>
-
-      {/* Image */}
-
-      <img
-        src={profile}
-        loading="lazy"
-        alt="Fazil"
-        className="relative z-10 h-[420px] w-[420px] rounded-[36px] object-cover shadow-[0_0_60px_rgba(0,255,255,0.15)]"
-      />
-
-      {/* Available Badge */}
-
-      <motion.div
-        animate={{
-          y: [0, -6, 0],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-        }}
-        className="absolute -right-6 top-10 z-20 rounded-full border border-cyan-400/20 bg-black/40 px-5 py-3 backdrop-blur-xl"
-      >
-        <div className="flex items-center gap-2">
-
-          <FaCircle className="text-green-400 text-xs" />
-
-          <span className="text-sm">
-            Available for Work
-          </span>
-
+        <div className="absolute -right-6 top-6 z-20 rounded-lg border border-line-strong bg-surface px-4 py-2">
+          <div className="flex items-center gap-2">
+            <FaCircle className="text-[8px] text-status" />
+            <span className="text-sm text-ink-text">Available for Work</span>
+          </div>
         </div>
-      </motion.div>
 
-      {/* Tech Badge */}
-
-      <motion.div
-        animate={{
-          y: [0, 8, 0],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-        }}
-        className="absolute -left-8 bottom-10 z-20 rounded-full border border-cyan-400/20 bg-black/40 px-5 py-3 backdrop-blur-xl"
-      >
-        <div className="flex items-center gap-2">
-
-          <FaCode className="text-cyan-400" />
-
-          <span className="text-sm">
-            MERN Stack
-          </span>
-
+        <div className="absolute -left-6 bottom-8 z-20 rounded-lg border border-line-strong bg-surface px-4 py-2">
+          <div className="flex items-center gap-2">
+            <FaCode className="text-signal" />
+            <span className="text-sm text-ink-text">Full-Stack Dev</span>
+          </div>
         </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 }

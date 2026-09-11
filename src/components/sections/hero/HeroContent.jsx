@@ -1,4 +1,3 @@
-import { TypeAnimation } from "react-type-animation";
 import GradientText from "../../ui/GradientText";
 import HeroButtons from "./HeroButtons";
 import HeroSocials from "./HeroSocials";
@@ -9,61 +8,53 @@ import HeroStats from "./HeroStats";
 export default function HeroContent() {
   return (
     <div>
-      {/* Greeting */}
+      {/* Eyebrow */}
       <motion.p
         variants={fadeUp}
         initial="hidden"
         animate="visible"
         custom={0.1}
-        className="mb-4 text-cyan-400"
+        className="mb-4 font-mono text-sm text-signal"
       >
-        Hello, I'm 👋
+        Anu Fazil P
       </motion.p>
 
-      {/* Name */}
+      {/* Headline */}
       <motion.h1
         variants={fadeUp}
         initial="hidden"
         animate="visible"
-        custom={0.3}
-        className="mb-6 text-6xl font-bold lg:text-8xl"
+        custom={0.25}
+        className="text-5xl font-bold leading-[1.1] lg:text-6xl"
       >
-        <GradientText>Anu Fazil</GradientText>
+        I build. I secure.
+        <br />
+        <GradientText>I keep learning.</GradientText>
       </motion.h1>
 
-      {/* Type Animation */}
-      <motion.div
+      {/* Role line */}
+      <motion.p
         variants={fadeUp}
         initial="hidden"
         animate="visible"
-        custom={0.5}
+        custom={0.45}
+        className="mt-6 max-w-xl text-lg font-medium text-ink-text/90"
       >
-        <TypeAnimation
-          sequence={[
-            "Computer Science Engineer",
-            2000,
-            "MERN Stack Developer",
-            2000,
-            "AI Enthusiast",
-            2000,
-          ]}
-          wrapper="h2"
-          speed={50}
-          repeat={Infinity}
-          className="text-2xl font-semibold text-gray-300"
-        />
-      </motion.div>
+        Full-Stack Web Developer focused on building modern web applications
+        and developing a deeper understanding of cybersecurity.
+      </motion.p>
 
       {/* Description */}
       <motion.p
         variants={fadeUp}
         initial="hidden"
         animate="visible"
-        custom={0.7}
-        className="mt-6 max-w-xl text-lg leading-8 text-gray-400"
+        custom={0.6}
+        className="mt-4 max-w-xl leading-8 text-muted"
       >
-        I build beautiful, scalable and modern web applications with a passion
-        for UI, AI and cybersecurity.
+        I build full-stack applications, experiment with new technologies,
+        and continuously strengthen my understanding of secure software
+        development.
       </motion.p>
 
       {/* Buttons */}
@@ -71,7 +62,7 @@ export default function HeroContent() {
         variants={fadeUp}
         initial="hidden"
         animate="visible"
-        custom={0.9}
+        custom={0.8}
       >
         <HeroButtons />
       </motion.div>
@@ -81,7 +72,7 @@ export default function HeroContent() {
         variants={fadeUp}
         initial="hidden"
         animate="visible"
-        custom={1.1}
+        custom={0.95}
       >
         <HeroSocials />
         <HeroStats />

@@ -6,72 +6,22 @@ export default function SuccessAnimation() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="
-        flex
-        min-h-[520px]
-        flex-col
-        items-center
-        justify-center
-        rounded-3xl
-        border
-        border-cyan-500/20
-        bg-white/5
-        p-10
-        text-center
-        backdrop-blur-xl
-      "
+      transition={{ duration: 0.3 }}
+      className="flex min-h-[420px] flex-col items-center justify-center rounded-xl border border-line bg-surface p-10 text-center"
     >
-      <motion.div
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{
-          type: "spring",
-          stiffness: 200,
-          damping: 12,
-        }}
-        className="
-          flex
-          h-24
-          w-24
-          items-center
-          justify-center
-          rounded-full
-          bg-cyan-500
-          text-4xl
-          text-white
-          shadow-[0_0_40px_rgba(34,211,238,.6)]
-        "
-      >
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{
-            delay: 0.25,
-          }}
-        >
-          <FaCheck />
-        </motion.div>
-      </motion.div>
+      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-status/15 text-2xl text-status">
+        <FaCheck />
+      </div>
 
-      <motion.h3
-        initial={{ y: 25, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.35 }}
-        className="mt-8 text-3xl font-bold"
-      >
+      <h3 className="mt-6 text-2xl font-bold text-ink-text">
         Message Sent!
-      </motion.h3>
+      </h3>
 
-      <motion.p
-        initial={{ y: 25, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.5 }}
-        className="mt-3 max-w-sm text-gray-400"
-      >
+      <p className="mt-3 max-w-sm text-muted">
         Thanks for reaching out.
         <br />
         I'll get back to you as soon as possible.
-      </motion.p>
+      </p>
     </motion.div>
   );
 }
