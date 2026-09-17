@@ -3,4 +3,5 @@ export const services = [
   "Cybersecurity Fundamentals",
   "Secure Web Applications",
   "AI-Assisted Development",
+  "Web Applications",
 ];

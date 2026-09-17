@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Button({
   children,
@@ -36,6 +37,21 @@ export default function Button({
   `;
 
   if (href) {
+    // Internal route ("/projects", "/#contact") — client-side navigation.
+    // Anything else (mailto:, http(s):, "#section" on the current page) —
+    // a plain anchor.
+    const isInternal = href.startsWith("/");
+
+    if (isInternal) {
+      return (
+        <motion.div whileTap={{ scale: 0.97 }} className="inline-block">
+          <Link to={href} className={commonClasses} {...props}>
+            {children}
+          </Link>
+        </motion.div>
+      );
+    }
+
     return (
       <motion.a
         href={href}

@@ -34,6 +34,12 @@
 
 html {
   scroll-behavior: smooth;
+  /* Offsets anchor/hash scroll targets so the fixed navbar doesn't
+     cover the top of the section being scrolled to. Without this,
+     a section's top edge aligns exactly with the viewport top —
+     i.e. behind the navbar — which also threw off the navbar's own
+     "which section is active" scroll-position math. */
+  scroll-padding-top: 96px;
 }
 
 body {
@@ -49,6 +55,17 @@ h1, h2, h3, h4 {
   font-family: var(--font-display);
 }
 
+/* Hides the native scrollbar on horizontal-scroll rows (e.g. the
+   Gallery's Mirror Hall) while keeping drag/touch/wheel scrolling. */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -56,4 +73,50 @@ h1, h2, h3, h4 {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Flowing background palette — teal, liquid-wave feel */
+@theme {
+  --color-flow1: #14B8A6;
+  --color-flow2: #22D3D3;
+  --color-flow3: #0EA5A0;
+}
+
+[data-theme="light"] {
+  --color-flow1: #2DD4BF;
+  --color-flow2: #5EEAD4;
+  --color-flow3: #38BDF8;
+}
+
+@keyframes drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(6%, 8%) scale(1.1); }
+  66% { transform: translate(-5%, 4%) scale(0.94); }
+}
+
+@keyframes drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40% { transform: translate(-8%, -6%) scale(0.92); }
+  70% { transform: translate(4%, 8%) scale(1.08); }
+}
+
+@keyframes drift-c {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  30% { transform: translate(5%, -8%) scale(1.06); }
+  65% { transform: translate(-6%, -3%) scale(0.95); }
+}
+
+.animate-drift-a { animation: drift-a 26s ease-in-out infinite; }
+.animate-drift-b { animation: drift-b 32s ease-in-out infinite; }
+.animate-drift-c { animation: drift-c 38s ease-in-out infinite; }
+
+/* Hides the native scrollbar on horizontal-scroll rows (e.g. the Mirror
+   Hall) while keeping the element scrollable via drag/swipe/wheel. */
+.scrollbar-hide {
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* old Edge/IE */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;              /* Chrome, Safari, new Edge */
 }

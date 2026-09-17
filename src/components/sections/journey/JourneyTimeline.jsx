@@ -35,11 +35,19 @@ export default function JourneyTimeline() {
         >
           <div className="absolute -left-[27px] top-1.5 z-10 h-3 w-3 rounded-full border-2 border-signal bg-ink" />
 
-          <div className="rounded-xl border border-line bg-surface p-5">
+          <div className="group rounded-xl border border-line bg-surface p-5 transition-colors duration-200 hover:border-signal/40">
             <p className="font-mono text-sm text-signal">{item.year}</p>
             <h3 className="mt-1 text-base font-semibold text-ink-text">
               {item.title}
             </h3>
+
+            {item.description && (
+              <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr]">
+                <p className="overflow-hidden text-sm leading-6 text-muted">
+                  <span className="block pt-3">{item.description}</span>
+                </p>
+              </div>
+            )}
           </div>
         </motion.div>
       ))}

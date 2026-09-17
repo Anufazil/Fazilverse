@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import { NAV_LINKS } from "../../../constants/navigation";
+import { toHomeRoute } from "../../../utils/navHref";
 
 export default function FooterLinks() {
   return (
@@ -7,13 +9,13 @@ export default function FooterLinks() {
 
       <div className="flex flex-col gap-2">
         {NAV_LINKS.map((link) => (
-          <a
+          <Link
             key={link.name}
-            href={link.href}
+            to={toHomeRoute(link.href)}
             className="text-sm text-muted transition-colors duration-200 hover:text-signal"
           >
             {link.name}
-          </a>
+          </Link>
         ))}
       </div>
     </div>

@@ -2,36 +2,73 @@ import { motion } from "framer-motion";
 import { FaImage } from "react-icons/fa";
 
 export default function GalleryTile({ item, onOpen, index }) {
+  const hasImage = !!item.image;
+
   return (
-    <motion.button
-      onClick={() => item.image && onOpen(item)}
-      initial={{ opacity: 0, y: 12 }}
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.35, delay: index * 0.04 }}
-      className="group relative aspect-square w-full overflow-hidden rounded-xl border border-line bg-surface text-left"
+      transition={{ duration: 0.4, delay: (index % 6) * 0.05 }}
+      className="group w-full"
     >
-      {item.image ? (
-        <motion.img
-          whileHover={{ scale: 1.06 }}
-          transition={{ duration: 0.4 }}
-          src={item.image}
-          alt={item.caption}
-          loading="lazy"
-          className="h-full w-full object-cover"
-        />
-      ) : (
-        <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-muted">
-          <FaImage className="text-2xl" />
-          <span className="font-mono text-xs">add photo</span>
-        </div>
-      )}
+      <button
+        onClick={() => hasImage && onOpen(item)}
+        className="block w-full text-left"
+      >
+        {/* Frame */}
+        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-t-xl border border-line-strong bg-surface">
+          {hasImage ? (
+            <>
+              <motion.img
+                whileHover={{ scale: 1.06 }}
+                transition={{ duration: 0.4 }}
+                src={item.image}
+                alt={item.caption}
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
 
-      {item.image && item.caption && (
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 to-transparent p-3 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-          <p className="text-sm text-ink-text">{item.caption}</p>
+              {item.caption && (
+                <div className="absolute inset-0 flex items-end bg-gradient-to-t from-ink/85 via-ink/10 to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                  <p className="p-3 text-sm text-ink-text">{item.caption}</p>
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-muted transition-colors duration-200 group-hover:text-signal">
+              <FaImage className="text-2xl" />
+              <span className="font-mono text-xs">add photo</span>
+            </div>
+          )}
         </div>
-      )}
-    </motion.button>
+
+        {/* Reflection — the "mirror" in Mirror Hall */}
+        <div
+          aria-hidden="true"
+          className="relative aspect-[4/2.2] w-full origin-top scale-y-[-1] overflow-hidden rounded-b-xl border border-t-0 border-line-strong opacity-60"
+        >
+          {hasImage ? (
+            <img
+              src={item.image}
+              alt=""
+              className="h-full w-full object-cover"
+              style={{
+                maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.55), transparent)",
+                WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.55), transparent)",
+              }}
+            />
+          ) : (
+            <div
+              className="h-full w-full bg-surface"
+              style={{
+                maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.4), transparent)",
+                WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.4), transparent)",
+              }}
+            />
+          )}
+        </div>
+      </button>
+    </motion.div>
   );
 }

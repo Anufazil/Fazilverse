@@ -1,12 +1,18 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaFileAlt } from "react-icons/fa";
 import MouseSpotlightCard from "../../ui/cards/MouseSpotlightCard";
 import TechBadge from "./TechBadge";
 import ProjectImage from "./ProjectImage";
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, onOpenCaseStudy }) {
   return (
-    <MouseSpotlightCard className="overflow-hidden p-0">
+    <MouseSpotlightCard className="relative overflow-hidden p-0">
+      {project.priority && (
+        <span className="absolute left-3 top-3 z-10 rounded-md bg-signal px-2 py-1 font-mono text-[10px] font-medium text-on-signal">
+          Featured
+        </span>
+      )}
+
       <motion.div whileHover={{ scale: 1.04 }} transition={{ duration: 0.3 }}>
         <ProjectImage
           image={project.image}
@@ -54,6 +60,15 @@ export default function ProjectCard({ project }) {
             >
               <FaExternalLinkAlt /> Demo
             </a>
+          )}
+
+          {project.caseStudy && onOpenCaseStudy && (
+            <button
+              onClick={() => onOpenCaseStudy(project)}
+              className="flex items-center gap-2 rounded-lg border border-line px-3 py-1.5 text-xs text-ink-text transition-colors duration-200 hover:border-signal/50 sm:text-sm"
+            >
+              <FaFileAlt /> Case Study
+            </button>
           )}
         </div>
       </div>

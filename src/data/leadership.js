@@ -1,7 +1,7 @@
 export const leadership = [
   {
     role: "Student Coordinator & Finance Coordinator",
-    org: "KARMA'26",
+    org: "KARMA'26 - KMCT CE National Level Techno-Cultural Fest",
     points: [
       "Event coordination",
       "Finance coordination",
