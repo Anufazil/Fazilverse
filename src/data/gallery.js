@@ -33,30 +33,7 @@ import g27 from "../assets/images/gallery/g27.webp";
 import g28 from "../assets/images/gallery/g28.webp";
 import g29 from "../assets/images/gallery/g29.webp";
 import g30 from "../assets/images/gallery/g30.webp";
-import g31 from "../assets/images/gallery/g31.webp";
-import g32 from "../assets/images/gallery/g32.webp";
-import g33 from "../assets/images/gallery/g33.webp";
-import g34 from "../assets/images/gallery/g34.webp";
-import g35 from "../assets/images/gallery/g35.webp";
-import g36 from "../assets/images/gallery/g36.webp";
-import g37 from "../assets/images/gallery/g37.webp";
-import g38 from "../assets/images/gallery/g38.webp";
-import g39 from "../assets/images/gallery/g39.webp";
-import g40 from "../assets/images/gallery/g40.webp";
-import g41 from "../assets/images/gallery/g41.webp";
-import g42 from "../assets/images/gallery/g42.webp";
-import g43 from "../assets/images/gallery/g43.webp";
-import g44 from "../assets/images/gallery/g44.webp";
-import g45 from "../assets/images/gallery/g45.webp";
-import g46 from "../assets/images/gallery/g46.webp";
-import g47 from "../assets/images/gallery/g47.webp";
-import g48 from "../assets/images/gallery/g48.webp";
-import g49 from "../assets/images/gallery/g49.webp";
-import g50 from "../assets/images/gallery/g50.webp";
-import g51 from "../assets/images/gallery/g51.webp";
-import g52 from "../assets/images/gallery/g52.webp";
-import g53 from "../assets/images/gallery/g53.webp";
-import g54 from "../assets/images/gallery/g54.webp";
+
 
 export const gallery = [
   { id: 1, image: g1, caption: "Add a caption" },
@@ -88,29 +65,5 @@ export const gallery = [
   { id: 27, image: g27, caption: "Add a caption" },
   { id: 28, image: g28, caption: "Add a caption" },
   { id: 29, image: g29, caption: "Add a caption" },
-  { id: 30, image: g30, caption: "Add a caption" },
-  { id: 31, image: g31, caption: "Add a caption" },
-  { id: 32, image: g32, caption: "Add a caption" },
-  { id: 33, image: g33, caption: "Add a caption" },
-  { id: 34, image: g34, caption: "Add a caption" },
-  { id: 35, image: g35, caption: "Add a caption" },
-  { id: 36, image: g36, caption: "Add a caption" },
-  { id: 37, image: g37, caption: "Add a caption" },
-  { id: 38, image: g38, caption: "Add a caption" },
-  { id: 39, image: g39, caption: "Add a caption" },
-  { id: 40, image: g40, caption: "Add a caption" },
-  { id: 41, image: g41, caption: "Add a caption" },
-  { id: 42, image: g42, caption: "Add a caption" },
-  { id: 43, image: g43, caption: "Add a caption" },
-  { id: 44, image: g44, caption: "Add a caption" },
-  { id: 45, image: g45, caption: "Add a caption" },
-  { id: 46, image: g46, caption: "Add a caption" },
-  { id: 47, image: g47, caption: "Add a caption" },
-  { id: 48, image: g48, caption: "Add a caption" },
-  { id: 49, image: g49, caption: "Add a caption" },
-  { id: 50, image: g50, caption: "Add a caption" },
-  { id: 51, image: g51, caption: "Add a caption" },
-  { id: 52, image: g52, caption: "Add a caption" },
-  { id: 53, image: g53, caption: "Add a caption" },
-  { id: 54, image: g54, caption: "Add a caption" },
+  { id: 30, image: g30, caption: "Add a caption" }, 
 ];
