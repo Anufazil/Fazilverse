@@ -8,6 +8,7 @@ import ABDU from "../assets/images/projects/ABDU.webp";
 import Cybrews from "../assets/images/projects/Cybrews.webp";
 import RestoCafeMenu from "../assets/images/projects/RestoCafeMenu.webp";
 import BarberQueue from "../assets/images/projects/BarberQueue.png";
+import AnamilTech from "../assets/images/projects/AnamilTech.png";
 
 // Featured projects — shown as large, priority-ordered cards.
 export const featuredProjects = [
@@ -411,6 +412,74 @@ export const otherProjects = [
         "Creating a responsive conversational interface while handling API requests, loading states, errors, and prompt-response interactions required careful frontend logic and API integration.",
       learned:
         "Learned practical AI API integration, asynchronous JavaScript, conversational UI design, API error handling, prompt-based interactions, and building lightweight AI-powered web applications.",
+    }
+  },
+  {
+    id: "anamil-tech",
+    priority: "featured",
+    title: "Anamil Tech",
+    category: "Business / E-Commerce",
+    description:
+      "A full-stack business website for a computer and electronics retailer in Saudi Arabia. Features a bilingual English-Arabic storefront, product inventory management, project showcases, customer enquiries, and a secure admin dashboard.",
+    technologies: [
+      "React",
+      "Vite",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "Socket.IO",
+      "Three.js",
+      "Recharts",
+      "CSS"
+    ],
+    features: [
+      "Bilingual English and Arabic storefront",
+      "Right-to-left Arabic layout",
+      "Interactive 3D gaming PC hero section",
+      "Admin dashboard with protected authentication",
+      "Service and project management",
+      "Inventory management with stock-level alerts",
+      "Product image uploads",
+      "Contact form and customer enquiries",
+      "WhatsApp enquiry tracking",
+      "Analytics dashboard with activity charts",
+      "Real-time content updates using Socket.IO",
+      "Responsive business website"
+    ],
+    image: AnamilTech,
+    github: null,
+    live: "https://anamil-tech.onrender.com/",
+    caseStudy: {
+      problem:
+        "Computer and electronics retailers need a professional online presence where customers can explore services, view products, check stock availability, and contact the business. Managing website content and inventory manually can also make it difficult to keep information current.",
+  
+      solution:
+        "Developed a full-stack business website with a bilingual storefront and an authenticated admin dashboard. The solution allows administrators to manage services, showcase projects, update inventory, review contact messages, and monitor WhatsApp interactions and website activity.",
+  
+      architecture: true,
+  
+      challenges: [
+        "Implementing a bilingual interface with proper Arabic right-to-left layout",
+        "Building a protected admin dashboard with JWT authentication",
+        "Connecting frontend components to a MongoDB-backed REST API",
+        "Implementing image uploads for projects and inventory items",
+        "Keeping storefront content synchronized with dashboard changes using Socket.IO",
+        "Tracking website visits, contact submissions, and WhatsApp button clicks"
+      ],
+  
+      learned: [
+        "Building and connecting a full-stack MERN application",
+        "Designing REST APIs with Express.js",
+        "Managing application data using MongoDB and Mongoose",
+        "Implementing JWT authentication and password hashing",
+        "Handling file uploads and displaying uploaded images",
+        "Implementing internationalization and RTL layouts",
+        "Using Socket.IO for real-time updates",
+        "Building analytics dashboards with Recharts",
+        "Deploying and maintaining a full-stack web application"
+      ]
     }
   },
 ];
