@@ -416,7 +416,6 @@ export const otherProjects = [
   },
   {
     id: "anamil-tech",
-    priority: "featured",
     title: "Anamil Tech",
     category: "Business / E-Commerce",
     description:
