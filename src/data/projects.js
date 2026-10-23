@@ -187,7 +187,6 @@ export const featuredProjects = [
 export const otherProjects = [
   {
     id: "cardora",
-    priority: 7,
     title: "Cardora",
     category: "Full-Stack Development",
     description:
