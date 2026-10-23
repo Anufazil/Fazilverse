@@ -9,6 +9,7 @@ import Cybrews from "../assets/images/projects/Cybrews.webp";
 import RestoCafeMenu from "../assets/images/projects/RestoCafeMenu.webp";
 import BarberQueue from "../assets/images/projects/BarberQueue.png";
 import AnamilTech from "../assets/images/projects/AnamilTech.png";
+import cardora from "../assets/images/projects/cardora.png";
 
 // Featured projects — shown as large, priority-ordered cards.
 export const featuredProjects = [
@@ -184,6 +185,69 @@ export const featuredProjects = [
 
 // Other projects — compact grid, less visual weight than Featured.
 export const otherProjects = [
+  {
+    id: "cardora",
+    priority: 7,
+    title: "Cardora",
+    category: "Full-Stack Development",
+    description:
+      "A full-stack digital identity platform for creating personalized digital business cards, sharing QR codes, and showcasing professional portfolios through a single link.",
+  
+    technologies: [
+      "React",
+      "Vite",
+      "JavaScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "bcryptjs",
+      "Zod",
+      "Nodemailer",
+      "Render"
+    ],
+  
+    features: [
+      "Digital Business Card Builder",
+      "Template-Based Customization",
+      "QR Code Generation",
+      "Shareable Professional Profiles",
+      "Portfolio Integration",
+      "Card Drafts and Snapshots",
+      "Usage Analytics",
+      "Secure Authentication",
+      "Input Validation",
+      "Responsive User Interface"
+    ],
+  
+    image: cardora,
+  
+    github: "https://github.com/Anufazil/cardora",
+    live: "https://cardora-j12n.onrender.com",
+  
+    caseStudy: {
+      problem:
+        "Traditional business cards provide limited space for professional information, are difficult to update, and cannot effectively showcase a person's digital portfolio.",
+  
+      solution:
+        "Cardora combines digital business cards, QR-code sharing, and professional portfolio presentation in a single web platform built with the MERN stack.",
+  
+      architecture: true,
+  
+      challenges: [
+        "Implementing secure authentication and session handling",
+        "Structuring a maintainable full-stack application",
+        "Configuring database connectivity and production environment variables",
+        "Integrating email verification and password recovery",
+        "Deploying and troubleshooting a full-stack application"
+      ],
+  
+      learned:
+        "Developed practical experience in MERN-stack development, API design, database modeling, authentication, security middleware, production configuration, and deployment troubleshooting."
+    }
+  },
   {
     id: "textoquest",
     title: "TextoQuest",
